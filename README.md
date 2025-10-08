@@ -1,16 +1,39 @@
-# deep_link_demo
+1. Perbedaan Route & Deep Link
 
-A new Flutter project.
+Route (Flutter): Navigasi di dalam aplikasi (contoh: /home, /detail/123) hanya jalan kalau aplikasi sudah terbuka
 
-## Getting Started
+Deep Link (Android): Tautan dari luar aplikasi (contoh: myapp://detail/123) bisa buka aplikasi dan langsung ke halaman tertentu
 
-This project is a starting point for a Flutter application.
+2. Kenapa Perlu Intent Filter
 
-A few resources to get you started if this is your first Flutter project:
+Android perlu tahu aplikasi mana yang menangani link tersebut
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Intent filter menentukan skema, host, dan path link yang cocok untuk membuka aplikasi
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Cara kerja uni_links
+
+uni_links jadi jembatan antara link dari Android/IOS dan Flutter
+
+Aplikasi berjalan (hot start)
+
+Link dikirim sebagai URL dan bisa digunakan untuk pindah halaman
+
+Saat Deep Link dibuka saat aplikasi sudah jalan
+
+Aplikasi tidak restart
+
+URL link masuk lewat listener uni_links
+
+Developer harus menangani URL tersebut untuk navigasi manual ke halaman tujuan
+
+Debugging
+
+Masalah: Aplikasi terbuka lewat adb, tapi tidak pindah ke halaman detail
+
+Cek:
+
+File AndroidManifest.xml pastikan intent-filter sudah cocok contohnya : (scheme, host, path)
+
+Kalau sudah cocok:
+
+Cek kode listener uni_links make sure URL ditangani dan diarahkan ke halaman yang tepat
