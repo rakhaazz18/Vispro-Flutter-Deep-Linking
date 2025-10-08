@@ -37,3 +37,11 @@ File AndroidManifest.xml pastikan intent-filter sudah cocok contohnya : (scheme,
 Kalau sudah cocok:
 
 Cek kode listener uni_links make sure URL ditangani dan diarahkan ke halaman yang tepat
+
+
+---------------------------------------------------------------------------------------------
+
+
+                                        SUMMARY
+
+Project ini bertujuan untuk memahami dan mengimplementasikan Deep Linking di Flutter agar aplikasi bisa membuka layar tertentu langsung dari tautan khusus,misalnya myapp://details/42.Prosesnya membuat project Flutter dengan beberapa routes,menambahkan intent filter di AndorindManifest.xml untuk bisa membaca custom URL,lalu menggunakan package uni_links untuk membaca dan memproses link tersebut baik saat aplikasi baru di run dan saat running.Lalu tambahkan command adb di terminal,user dapat mengetes link tadi apakah bisa berfungsi dan berpindah halaman sesuai dengan arahan Deep Linking apa tidak
